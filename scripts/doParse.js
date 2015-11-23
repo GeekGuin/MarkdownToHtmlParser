@@ -24,7 +24,7 @@ marked.setOptions({
 
 var renderer = new marked.Renderer();
 
-renderer.heading = function (text, level) {
+renderer.heading = function (text, level){
   	var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
 
 	return '<h' + level + '><a name="' +
@@ -33,6 +33,12 @@ renderer.heading = function (text, level) {
 	             escapedText +
 	             '"><span class="header-link"></span></a>' +
 	              text + '</h' + level + '>';
+}
+
+renderer.paragraph = function (text){
+  	var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+
+	return '<p class="markdownParagraph">' + escapedText + '</p>';
 }
 
 var update = function(){
