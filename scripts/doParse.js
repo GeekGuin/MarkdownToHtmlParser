@@ -8,10 +8,18 @@ marked.setOptions({
 	smartLists: true,
 	smartypants: false,
 	emoji: function (emoji) {
+		// var homeDir = Titanium.Filesystem.getUserDirectory();
+		// var mySampleFile = Titanium.Filesystem.getFile('graphics/emojis/', encodeURIComponent(emoji) + ".png");
+
+		// if (mySampleFile.exists()) {
+	 //   		var str = 'graphics/emojis' + encodeURIComponent(emoji) + '.png"';
+		// }else{
+		// 	var str = 'graphics/emojis' + encodeURIComponent(emoji) + '.gif"';
+		// }
     	return '<img src="'
 			+ 'graphics/emojis/'
 			+ encodeURIComponent(emoji)
-			+ '.png"'
+			+ '.gif"'
 			+ ' alt=":'
 			+ escape(emoji)
 			+ ':"'
@@ -24,7 +32,7 @@ marked.setOptions({
 
 var renderer = new marked.Renderer();
 
-renderer.heading = function (text, level) {
+renderer.heading = function (text, level){
   	var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
 
 	return '<h' + level + '><a name="' +

@@ -4,3 +4,5 @@ A markdown to html parser using the [marked](https://github.com/chjj/marked) mar
 
 Basically this supports everything that the [GitHub Markdown supports](https://guides.github.com/features/mastering-markdown/)
 but the task lists!
+
+[TEST IT HERE!! :pizza:](http://penguinrepublic.github.io/MarkdownToHtmlParser)
